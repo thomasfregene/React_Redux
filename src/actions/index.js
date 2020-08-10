@@ -6,7 +6,7 @@ export function moviesList(){
         payload:[
             {id:'1', name: 'Pulp Friction'},
             {id:'2', name: 'Pacific Rim'},
-            {id:'1', name: 'Rambo'},
+            {id:'3', name: 'Rambo'},
         ]
     }
 }

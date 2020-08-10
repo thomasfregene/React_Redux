@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import * as actions from './actions';
+import {moviesList} from './actions';
+import  {bindActionCreators} from 'redux';
 
  class App extends Component {
 
   componentDidMount(){
-    this.props.dispatch(actions.moviesList())
+    //this.props.dispatch(moviesList())
+    this.props.moviesList();
   }
+
   render() {
+    console.log(this.props)
     
     return (
       <div>
@@ -34,4 +38,8 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({moviesList}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
