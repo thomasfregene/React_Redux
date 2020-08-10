@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleWare} from 'redux';
+
+const createStoreWithMiddleWare = applyMiddleWare()(createStore)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={createStoreWithMiddleWare()}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  </Provider>
+,document.getElementById('root'));
 
