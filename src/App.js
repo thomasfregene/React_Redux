@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {moviesList} from './actions';
 import  {bindActionCreators} from 'redux';
 
+
  class App extends Component {
 
   componentDidMount(){
